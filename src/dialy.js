@@ -37,96 +37,24 @@ const activitiesData = {
         title: "Sekolah & Coding",
         time: "Pagi - Siang (07:00 - 15:00)",
         description: "Setiap pagi saya berangkat ke SMK Taruna Bhakti untuk belajar Rekayasa Perangkat Lunak (RPL). Di sekolah, saya fokus mempelajari berbagai bahasa pemrograman, framework terbaru, dan best practices dalam software development. Selain mengikuti pelajaran formal, saya juga aktif berdiskusi dengan teman-teman sekelas tentang project yang sedang dikerjakan dan saling berbagi knowledge tentang teknologi terbaru.",
-        gallery: [
-            {
-                url: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop",
-                caption: "Setup workspace untuk coding"
-            },
-            {
-                url: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=2028&auto=format&fit=crop",
-                caption: "Belajar algoritma dan struktur data"
-            },
-            {
-                url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
-                caption: "Diskusi project dengan teman"
-            },
-            {
-                url: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop",
-                caption: "Presentasi project akhir"
-            }
-        ],
         tools: ["HTML/CSS", "JavaScript", "PHP", "Python", "React", "Node.js", "Git", "VS Code"]
     },
     design: {
         title: "UI/UX Exploration",
         time: "Sore (15:00 - 18:00)",
         description: "Setelah pulang sekolah, saya meluangkan waktu untuk eksplorasi desain UI/UX. Saya suka browsing di Dribbble dan Behance untuk mencari inspirasi dari designer profesional di seluruh dunia. Kemudian saya mencoba mengimplementasikan ide-ide tersebut di Figma, sambil menambahkan sentuhan personal dan kreativitas saya sendiri. Kadang saya juga mencoba redesign aplikasi yang sudah ada untuk melatih skill problem-solving dalam desain.",
-        gallery: [
-            {
-                url: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2064&auto=format&fit=crop",
-                caption: "Sketching wireframes"
-            },
-            {
-                url: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?q=80&w=2070&auto=format&fit=crop",
-                caption: "Design mockups di Figma"
-            },
-            {
-                url: "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=2036&auto=format&fit=crop",
-                caption: "Color palette exploration"
-            },
-            {
-                url: "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?q=80&w=2070&auto=format&fit=crop",
-                caption: "User interface components"
-            }
-        ],
         tools: ["Figma", "Adobe XD", "Photoshop", "Illustrator", "Dribbble", "Behance"]
     },
     relax: {
         title: "Santai & Evaluasi",
         time: "Malam (20:00 - 23:00)",
         description: "Di malam hari, saya suka istirahat sejenak dari coding dan desain. Biasanya saya main game untuk refresh otak, scrolling media sosial untuk lihat perkembangan terbaru di tech community, atau nonton video tutorial sambil santai. Saya juga meluangkan waktu untuk evaluasi progress hari ini dan membuat to-do list untuk besok. Kadang saya juga ngobrol dengan teman-teman developer di Discord atau Telegram untuk sharing pengalaman.",
-        gallery: [
-            {
-                url: "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=2057&auto=format&fit=crop",
-                caption: "Gaming setup"
-            },
-            {
-                url: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2071&auto=format&fit=crop",
-                caption: "Workspace dimalam hari"
-            },
-            {
-                url: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=2072&auto=format&fit=crop",
-                caption: "Planning untuk besok"
-            },
-            {
-                url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop",
-                caption: "Diskusi online dengan komunitas"
-            }
-        ],
         tools: ["Discord", "Telegram", "Notion", "Spotify", "YouTube", "Netflix"]
     },
     learning: {
         title: "Learning & Exploring",
         time: "Weekend (Sabtu - Minggu)",
         description: "Di akhir pekan, saya fokus untuk learning dan exploring teknologi baru. Saya sering ikut webinar atau workshop online tentang web development, design trends, atau teknologi emerging seperti AI dan blockchain. Saya juga meluangkan waktu untuk belajar dari online course di platform seperti Udemy atau YouTube. Kadang saya juga mencoba build side project untuk praktek skill yang baru dipelajari.",
-        gallery: [
-            {
-                url: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=2073&auto=format&fit=crop",
-                caption: "Mengikuti online course"
-            },
-            {
-                url: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=2074&auto=format&fit=crop",
-                caption: "Belajar teknologi baru"
-            },
-            {
-                url: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=2074&auto=format&fit=crop",
-                caption: "Membaca dokumentasi"
-            },
-            {
-                url: "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?q=80&w=2070&auto=format&fit=crop",
-                caption: "Side project development"
-            }
-        ],
         tools: ["Udemy", "YouTube", "Medium", "Dev.to", "Stack Overflow", "GitHub"]
     }
 };
@@ -256,10 +184,10 @@ const hobyData = {
 };
 
 
-// ===== MODAL AKTIVITAS =====
+// ===== MODAL AKTIVITAS (TANPA GALLERY) =====
 const activityModal = document.getElementById('activityModal');
 const modalBody = document.getElementById('modalBody');
-const activityCards = document.querySelectorAll('.activity-card');
+const activityCards = document.querySelectorAll('.activity-category-card');
 
 activityCards.forEach(card => {
     card.addEventListener('click', function() {
@@ -273,16 +201,6 @@ activityCards.forEach(card => {
 });
 
 function showActivityModal(data) {
-    let galleryHTML = '';
-    data.gallery.forEach(item => {
-        galleryHTML += `
-            <div class="gallery-item">
-                <img src="${item.url}" alt="${item.caption}">
-                <div class="gallery-caption">${item.caption}</div>
-            </div>
-        `;
-    });
-
     let toolsHTML = '';
     data.tools.forEach(tool => {
         toolsHTML += `<span class="tool-tag">${tool}</span>`;
@@ -296,12 +214,6 @@ function showActivityModal(data) {
         <div class="modal-description">
             ${data.description}
         </div>
-        <div class="modal-gallery">
-            <h3><i class="fa-solid fa-images"></i> Gallery</h3>
-            <div class="gallery-grid">
-                ${galleryHTML}
-            </div>
-        </div>
         <div class="modal-tools">
             <h3><i class="fa-solid fa-wrench"></i> Tools & Technologies</h3>
             <div class="tools-list">
@@ -310,12 +222,13 @@ function showActivityModal(data) {
         </div>
     `;
 
-    activityModal.classList.add('active');
+    activityModal.classList.add('active', 'zoom-in');
+    activityModal.classList.remove('zoom-out');
     document.body.style.overflow = 'hidden';
 }
 
 
-// ===== MODAL HOBY =====
+// ===== MODAL HOBY (DENGAN GALLERY) =====
 const hobyModal = document.getElementById('hobyModal');
 const hobyModalBody = document.getElementById('hobyModalBody');
 const hobyCards = document.querySelectorAll('.hoby-card');
@@ -368,12 +281,13 @@ function showHobyModal(data) {
         </div>
     `;
 
-    hobyModal.classList.add('active');
+    hobyModal.classList.add('active', 'zoom-in');
+    hobyModal.classList.remove('zoom-out');
     document.body.style.overflow = 'hidden';
 }
 
 
-// ===== CLOSE MODAL =====
+// ===== CLOSE MODAL DENGAN ANIMASI ZOOM OUT =====
 document.addEventListener('click', function(e) {
     if (e.target.classList.contains('modal-close') || 
         e.target.classList.contains('modal-overlay')) {
@@ -388,9 +302,16 @@ document.addEventListener('keydown', function(e) {
 });
 
 function closeAllModals() {
-    activityModal.classList.remove('active');
-    hobyModal.classList.remove('active');
-    document.body.style.overflow = 'auto';
+    // Tambah animasi zoom-out
+    activityModal.classList.add('zoom-out');
+    hobyModal.classList.add('zoom-out');
+    
+    // Tunggu animasi selesai baru hapus modal
+    setTimeout(() => {
+        activityModal.classList.remove('active', 'zoom-in', 'zoom-out');
+        hobyModal.classList.remove('active', 'zoom-in', 'zoom-out');
+        document.body.style.overflow = 'auto';
+    }, 300);
 }
 
 
