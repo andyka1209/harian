@@ -119,7 +119,8 @@ nav ul li a {
     transition: all 0.3s ease;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
     color: var(--color-white);
     background: rgba(255, 255, 255, 0.1);
 }
@@ -137,7 +138,6 @@ nav ul li a:hover {
     text-align: center;
 }
 
-/* Clock Container */
 .clock-container {
     max-width: 700px;
     margin: 0 auto 3rem;
@@ -178,86 +178,77 @@ nav ul li a:hover {
     animation: fadeInUp 1.2s ease-out;
 }
 
-/* ===== SECTION AKTIVITAS ===== */
-.activities-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-.activity-card {
-    padding: 0;
-    overflow: hidden;
+/* ===== NEW ACTIVITY CATEGORY CARD STYLE ===== */
+.activity-category-card {
+    margin-bottom: 2rem;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.activity-img-wrapper {
-    width: 100%;
-    height: 220px;
+.activity-category-card:hover {
+    transform: translateY(-5px);
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.category-header h3 {
+    font-size: 1.8rem;
+    color: var(--color-white);
+    font-weight: 600;
+}
+
+.item-count {
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+    background: rgba(125, 82, 253, 0.2);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.category-preview {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.preview-img {
+    aspect-ratio: 1;
+    border-radius: 12px;
     overflow: hidden;
+    position: relative;
 }
 
-.activity-img-wrapper img {
+.preview-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease;
 }
 
-.activity-card:hover .activity-img-wrapper img {
+.activity-category-card:hover .preview-img img {
     transform: scale(1.1);
 }
 
-.activity-info {
-    padding: 1.5rem;
-}
-
-.activity-time {
-    display: inline-block;
-    font-size: 0.9rem;
-    color: var(--color-secondary);
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    letter-spacing: 1px;
-}
-
-.activity-info h4 {
-    font-size: 1.5rem;
-    color: var(--color-white);
-    font-weight: 600;
-    margin-bottom: 0.8rem;
-}
-
-.activity-info p {
-    font-size: 0.95rem;
-    color: var(--color-light-gray);
-    line-height: 1.6;
-    margin-bottom: 1rem;
-}
-
-/* Button Detail */
-.btn-detail, .btn-detail-hoby {
-    background: var(--color-primary);
-    color: var(--color-white);
-    border: none;
-    padding: 0.7rem 1.5rem;
-    border-radius: 25px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex;
+.preview-more {
+    aspect-ratio: 1;
+    border-radius: 12px;
+    background: rgba(125, 82, 253, 0.3);
+    display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--color-white);
+    font-weight: 700;
+    border: 2px dashed var(--color-primary);
 }
 
-.btn-detail:hover, .btn-detail-hoby:hover {
-    background: var(--color-secondary);
-    transform: translateX(5px);
-}
-
-/* ===== SECTION HOBY ===== */
+/* ===== SECTION HOBY (TETAP SAMA) ===== */
 .hoby-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -294,6 +285,26 @@ nav ul li a:hover {
     color: var(--color-light-gray);
     line-height: 1.5;
     margin-bottom: 1rem;
+}
+
+.btn-detail-hoby {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-detail-hoby:hover {
+    background: var(--color-secondary);
+    transform: translateX(5px);
 }
 
 /* ===== SECTION PERSONALITY ===== */
@@ -423,6 +434,37 @@ nav ul li a:hover {
     align-items: center;
 }
 
+/* Animasi Zoom untuk Modal */
+.modal.zoom-in .modal-content {
+    animation: zoomIn 0.4s ease;
+}
+
+.modal.zoom-out .modal-content {
+    animation: zoomOut 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+}
+
 .modal-overlay {
     position: absolute;
     top: 0;
@@ -445,12 +487,11 @@ nav ul li a:hover {
     overflow-y: auto;
     padding: 2.5rem;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    animation: slideUp 0.4s ease;
     z-index: 10000;
 }
 
 .modal-close {
-    position: absolute;
+    position: fixed;
     top: 1.5rem;
     right: 1.5rem;
     background: rgba(255, 255, 255, 0.1);
@@ -465,7 +506,7 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10001;
+    z-index: 10002;
 }
 
 .modal-close:hover {
@@ -473,7 +514,6 @@ nav ul li a:hover {
     transform: rotate(90deg);
 }
 
-/* Modal Header */
 .modal-header {
     margin-bottom: 2rem;
 }
@@ -492,7 +532,6 @@ nav ul li a:hover {
     letter-spacing: 1px;
 }
 
-/* Modal Description */
 .modal-description {
     color: var(--color-light-gray);
     font-size: 1.1rem;
@@ -500,7 +539,6 @@ nav ul li a:hover {
     margin-bottom: 2rem;
 }
 
-/* Modal Gallery */
 .modal-gallery {
     margin-top: 2rem;
 }
@@ -554,7 +592,6 @@ nav ul li a:hover {
     transform: translateY(0);
 }
 
-/* Modal Tools/List */
 .modal-tools {
     margin-top: 2rem;
 }
@@ -633,17 +670,6 @@ footer p {
     to { opacity: 1; }
 }
 
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* ===== SCROLLBAR MODAL ===== */
 .modal-content::-webkit-scrollbar {
     width: 8px;
@@ -669,7 +695,10 @@ footer p {
         grid-template-columns: 1fr;
     }
     
-    .activities-grid,
+    .category-preview {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .hoby-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
@@ -720,7 +749,10 @@ footer p {
         font-size: 1rem;
     }
 
-    .activities-grid,
+    .category-preview {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .hoby-grid {
         grid-template-columns: 1fr;
     }
@@ -767,6 +799,10 @@ footer p {
     }
 
     .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-preview {
         grid-template-columns: 1fr;
     }
 }
